@@ -6,11 +6,13 @@ const PORT = 4000; // Use the port you changed to
 
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // Serve static files from the "public" directory
+
+// Serve static files from the "public" directory
+app.use(express.static('public'));
 
 // Route to serve the homepage
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html'); // Adjust the path to your index.html
+    res.sendFile(__dirname + '/public/index.html'); // Path to your index.html inside the "public" folder
 });
 
 // Route to handle form submission
@@ -24,4 +26,3 @@ app.post('/submit-form', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
