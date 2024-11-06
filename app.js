@@ -15,6 +15,16 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html'); // Path to your index.html inside the "public" folder
 });
 
+// Route to serve the contact page
+app.get('/contact', (req, res) => {
+    res.sendFile(__dirname + '/public/contact.html'); // Path to your contact.html
+});
+
+// Route to serve the about page
+app.get('/about', (req, res) => {
+    res.sendFile(__dirname + '/public/about.html'); // Path to your about.html
+});
+
 // Route to handle form submission
 app.post('/submit-form', (req, res) => {
     const { name, email, message } = req.body;
